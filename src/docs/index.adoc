@@ -1,0 +1,37 @@
+= Название вашей документации
+:author: Ваше Имя
+:toc: left
+:icons: font
+:source-highlighter: Pygments
+
+== Введение
+
+Это пример документации, написанной в формате AsciiDoc.
+Она будет автоматически публиковаться в GitLab Pages.
+
+== Секция с кодом
+
+Чтобы вставить код, используйте блок такого вида:
+
+[source,java]
+----
+public class HelloWorld {
+    public static void main(String[] args) {
+        System.out.println("Привет, Docs as Code!");
+    }
+}
+----
+
+== Диаграмма
+
+Вы можете вставлять диаграммы Mermaid прямо в текст.
+
+[mermaid]
+----
+graph TD;
+    A[Начать] --> B{Есть изменения?};
+    B -- Да --> C[Закоммитить];
+    C --> D[Запушить];
+    B -- Нет --> E[Отдыхать];
+    D --> E;
+----

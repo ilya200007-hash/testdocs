@@ -1,0 +1,23 @@
+name: Publish AsciiDoc to GitHub Pages
+
+on:
+  push:
+    branches: [ "main" ] # Запускать при пуше в ветку main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # Важно! Даем право на запись в ветку gh-pages [citation:7]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Asciidoctor GitHub Pages Action
+        uses: manoelcampos/asciidoctor-ghpages-action@v2
+        with:
+          source_dir: src/docs # Папка, где лежат ваши .adoc файлы
+          # pdf_build: true  # Раскомментируйте, если нужен PDF
+          # slides_build: true # Раскомментируйте, если нужны слайды reveal.js
+          # asciidoctor_params: # Дополнительные параметры, если нужно
+          #   - -a source-highlighter=rouge
